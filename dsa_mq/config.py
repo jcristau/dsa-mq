@@ -12,8 +12,8 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-import ConfigParser
 import os
+from six.moves import configparser
 
 class Config(object):
     def __init__(self, options):
@@ -27,7 +27,7 @@ class Config(object):
                         'topic', 'queue', 'git', 'debug']
         self.config = {}
 
-        config = ConfigParser.ConfigParser()
+        config = configparser.ConfigParser()
 
         if getattr(options, 'config', None):
             self.files.append(options.config)

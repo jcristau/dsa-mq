@@ -15,6 +15,7 @@ Depends:
  ${misc:Depends},
  ${python:Depends},
  python-kombu,
+ python-six,
 Description: Common libraries for pub/sub messaging in debian
  Intended to provide a consistent access to Pub/Sub messaging
  for debian.org hosts and projects
@@ -25,6 +26,7 @@ Depends:
  ${misc:Depends},
  ${python3:Depends},
  python3-kombu,
+ python3-six,
 Description: Common libraries for pub/sub messaging in debian
  Intended to provide a consistent access to Pub/Sub messaging
  for debian.org hosts and projects
