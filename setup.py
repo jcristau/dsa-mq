@@ -8,7 +8,7 @@ setup(name='dsa-mq',
       description='Common libraries for pub/sub messaging in debian',
       author='Stephen Gran',
       author_email='sgran@debian.org',
-      url='https://github.com/sgran/dsa-mq',
+      url='https://github.com/jcristau/dsa-mq',
       scripts=glob.glob('bin/*'),
       packages=['dsa_mq'],
      )
