@@ -220,7 +220,7 @@ class Connection(object):
             try:
                 self._connect(params)
                 return
-            except (IOError, *self.connection_errors) as e:
+            except (IOError,) + self.connection_errors as e:
                 if str(e) == 'Socket closed':
                     e = 'Socket closed (probably authentication failure)'
                 LOG.warning("reconnect: IOerror: %s" % e)
