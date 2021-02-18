@@ -1,9 +1,9 @@
-dsa-mq (0.4) UNRELEASED; urgency=medium
+dsa-mq (0.4) unstable; urgency=medium
 
   * Build a package for python3
   * Add missing dependency on kombu
 
- -- Julien Cristau <jcristau@debian.org>  Tue, 03 Nov 2020 16:04:27 +0100
+ -- Julien Cristau <jcristau@debian.org>  Thu, 18 Feb 2021 18:36:19 +0100
 
 dsa-mq (0.3) unstable; urgency=low
 
