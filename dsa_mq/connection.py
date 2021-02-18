@@ -161,7 +161,7 @@ class Connection(object):
 
         self.params_list = params_list
         self.connection = None
-        self.connection_errors = None
+        self.connection_errors = ()
         self.channel = None
         self.reconnect()
 
@@ -220,7 +220,7 @@ class Connection(object):
             try:
                 self._connect(params)
                 return
-            except (IOError, self.connection_errors) as e:
+            except (IOError, *self.connection_errors) as e:
                 if str(e) == 'Socket closed':
                     e = 'Socket closed (probably authentication failure)'
                 LOG.warning("reconnect: IOerror: %s" % e)
@@ -255,7 +255,7 @@ class Connection(object):
         while True:
             try:
                 return method(*args, **kwargs)
-            except (self.connection_errors, socket.timeout, IOError) as e:
+            except self.connection_errors + (socket.timeout, IOError) as e:
                 if error_callback:
                     error_callback(e)
             except Exception as e:
